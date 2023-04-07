@@ -1,0 +1,130 @@
+using System;
+
+namespace LaptopApp
+{
+    abstract class Laptop
+    {
+        protected string vga;
+        protected string processor;
+
+        public Laptop(string vga, string processor)
+        {
+            this.vga = vga;
+            this.processor = processor;
+        }
+
+        public abstract void LaptopDinyalakan();
+
+        public abstract void LaptopDimatikan();
+
+        public abstract void BermainGame();
+
+        public abstract void Ngoding();
+    }
+
+    class Vivobook : Laptop
+    {
+        public Vivobook(string vga, string processor) : base(vga, processor)
+        {
+        }
+
+        public override void LaptopDinyalakan()
+        {
+            Console.WriteLine($"Laptop Vivobook dengan VGA {vga} dan Processor {processor} menyala");
+        }
+
+        public override void LaptopDimatikan()
+        {
+            Console.WriteLine($"Laptop Vivobook dengan VGA {vga} dan Processor {processor} dimatikan");
+        }
+
+        public override void BermainGame()
+        {
+            Console.WriteLine($"Laptop Vivobook dengan VGA {vga} dan Processor {processor} sedang memainkan game");
+        }
+
+        public override void Ngoding()
+        {
+            Console.WriteLine("Ctak Ctak Ctak, error lagi!!");
+        }
+    }
+
+    class IdeaPad : Laptop
+    {
+        public IdeaPad(string vga, string processor) : base(vga, processor)
+        {
+        }
+
+        public override void LaptopDinyalakan()
+        {
+            Console.WriteLine($"Laptop IdeaPad dengan VGA {vga} dan Processor {processor} menyala");
+        }
+
+        public override void LaptopDimatikan()
+        {
+            Console.WriteLine($"Laptop IdeaPad dengan VGA {vga} dan Processor {processor} dimatikan");
+        }
+
+        public override void BermainGame()
+        {
+            Console.WriteLine($"Laptop IdeaPad dengan VGA {vga} dan Processor {processor} sedang memainkan game");
+        }
+
+        public override void Ngoding()
+        {
+            Console.WriteLine("Ctak Ctak Ctak, error lagi!!");
+        }
+    }
+
+    class Predator : Laptop
+    {
+        public Predator(string vga, string processor) : base(vga, processor)
+        {
+        }
+
+        public override void LaptopDinyalakan()
+        {
+            Console.WriteLine($"Laptop Predator dengan VGA {vga} dan Processor {processor} menyala");
+        }
+
+        public override void LaptopDimatikan()
+        {
+            Console.WriteLine($"Laptop Predator dengan VGA {vga} dan Processor {processor} dimatikan");
+        }
+
+        public override void BermainGame()
+        {
+            Console.WriteLine($"Laptop Predator dengan VGA {vga} dan Processor {processor} sedang memainkan game");
+        }
+
+        public override void Ngoding()
+        {
+            Console.WriteLine("Ctak Ctak Ctak, error lagi!!");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var laptop1 = new Vivobook("NVIDIA GeForce MX330", "Intel Core i5-10210U");
+            var laptop2 = new IdeaPad("Intel UHD Graphics 620", "Intel Core i5-8265U");
+            var laptop3 = new Predator("NVIDIA GeForce GTX 1660 Ti", "Intel Core i7-10750H");
+
+            laptop1.LaptopDinyalakan();
+            laptop1.Ngoding();
+            laptop1.BermainGame();
+            laptop1.LaptopDimatikan();
+
+            laptop2.LaptopDinyalakan();
+            laptop2.Ngoding();
+            laptop2.BermainGame();
+            laptop2.LaptopDimatikan();
+
+            laptop3.LaptopDinyalakan();
+            laptop3.Ngoding();
+            laptop3.BermainGame();
+            laptop3.LaptopDimatikan();
+        }
+    }
+}
